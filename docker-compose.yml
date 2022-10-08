@@ -7,3 +7,5 @@ services:
       - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
+volumes:
+  bundle:
