@@ -1,3 +1,12 @@
 <% provide(:title, "Home")%>
-<h1>简单应用</h1>
-<p>This is home page</p>
+
+<div class="center jubotron">
+<h1>welcome to the sample app</h1>
+<h2>
+This is the home page for the 
+<%= link_to "ROR", "www.railstutorial.org"%>
+<%= link_to "sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+</h2>
+</div>
+
+<%= link_to image_tag("2.png", alt: "lol logo", width: "500"), "#" %>
