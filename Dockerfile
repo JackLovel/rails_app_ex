@@ -6,7 +6,12 @@ RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     less \
     git \
     libvips42 \
-    sqlite3 libsqlite3-dev nodejs
+    sqlite3 \ 
+    libsqlite3-dev \ 
+    nodejs \  
+    vim  
+    
+RUN EDITOR=vim bin/rails credentials:edit'
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \
@@ -31,7 +36,7 @@ COPY . .
 # SECRET_KEY_BASE or RAILS_MASTER_KEY is required in production, but we don't
 # want real secrets in the image or image history. The real secret is passed in
 # at run time
-ARG SECRET_KEY_BASE=fakekeyforassets
+# ARG SECRET_KEY_BASE=fakekeyforassets
 RUN bin/rails assets:clobber && bundle exec rails assets:precompile
 
 
